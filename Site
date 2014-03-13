@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+Оформлення замовлення
+<Meta equiv="Content-type"
+content = "text/html; charset = utf - 8" />
+ <link rel= "stylesheet" type="text/css" href ="style.css" />
+ </head> 
+ <body bgcolor="#FFF8D2" text="black">
+<p> </p>
+<font color ="green">
+<p> </p>
+</font>
+<p> </p>
+<script type="text/javascript">
+function poschitat(){
+var tovar=-1;
+alert(document.forms[4].tovar[0].checked)
+if (document.forms[4].tovar[0].checked==true){
+tovar=0;}
+if (document.forms[4].tovar[1].checked==true){
+tovar=1;}
+if (document.forms[2].tovar[0].checked==true){
+tovar=0;}
+if (document.forms[2].tovar[1].checked==true){
+tovar=1;}
+alert(tovar)
+}
+function dostavka(){
+var misto=-1;
+alert(document.forms[2].misto[0].checked)
+if (document.forms[2].misto[0].checked==true){
+misto=0;}
+if (document.forms[2].misto[1].checked==true){
+misto=1;}
+if (document.forms[2].misto[2].checked==true){
+misto=0;}
+if (document.forms[2].misto[3].checked==true){
+misto=1;}
+alert(misto)
+}
+</script>
+<form name="form1" method="post" action="obrabotchik.php">
+Введите ФИО: <br>
+<input type="text" name="fio" size="40">
+<br>
+</form>
+<form name="form2" method="post" action="obrabotchik.php">
+Введите свой e-mail: <br>
+<input type="text" name="e-mail" size="35">
+</form>
+<form name="misto" method="post" action="obrabotchik.php">
+Виберите свой город: <br>
+<select name="select" size="1" id="select" >
+                  <option selected>Киев</option>
+                  <option>Черкаси</option>
+                  <option>Кіровоград</option>
+	<option >Рівне</option>
+                  <option>Одеса</option>
+                  <option>Запоріжжя</option>
+	<option >Ужгород</option>
+                  <option>Івано-Франківськ</option>
+                  <option>Сімферополь</option>
+	<option>Донецьк</option>
+                  <option>Суми</option>
+                  <option>Чернігів</option>
+	<option>Луганськ</option>
+                  <option>Чернівці</option>
+                  <option>Миколаїв</option>
+	<option>Луцьк</option>
+                  <option>Тернопіль</option>
+                  <option>Хмельницьк</option>
+	<option>Дніпропетровськ</option>
+                  <option>Полтава</option>
+                  <option>Харків</option>
+	<option>Херсон</option>
+                  <option>Львів</option>
+                  <option>Вінниця</option>
+                </select>
+</form>
+
+<form name="form4" method="post" action="obrabotchik.php">
+Адрес (дом, квартира): <br>
+<input type="text" name="adress" size="50">
+<br>
+</form>
+
+<form name="form5" method="post" action="obrabotchik.php">
+<p> Какой продукт вы хотите получить?</p>
+<p>
+                <input name="tovar" type="radio" id="TV" value="Телевізор" checked>
+                Телевізор<br>
+                <input type="radio" name="tovar" id="computer2" value="Комп'ютер">
+                Комп'ютер </p>
+
+</form> 
+<form name="form6" method="post" action="obrabotchik.php">
+Какое количество товару вам необходимо: <br>
+<input type="text" name="kol" size="15">
+<br>
+<br><br><input type="button" value="порахувати" onclick="poschitat()">
+</form>
+
+<p>
+                <input type="submit" name="Submit" id="button2" value="Сделать заказ" width="20">
+                <input type="reset" name="button2" id="button3" value="Отмена ">
+              </p>
+ </body>
+</html>
