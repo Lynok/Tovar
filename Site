@@ -15,77 +15,68 @@ content = "text/html; charset = utf - 8" />
 <script type="text/javascript">
 function poschitat(){
 var tovar=-1;
-alert(document.forms[4].tovar[0].checked)
+var city=-1;
+
 if (document.forms[4].tovar[0].checked==true){
 tovar=0;}
 if (document.forms[4].tovar[1].checked==true){
 tovar=1;}
-if (document.forms[2].tovar[0].checked==true){
+if (document.forms[2].Misto[0].checked==true){
 tovar=0;}
-if (document.forms[2].tovar[1].checked==true){
-tovar=1;}
-alert(tovar)
-}
-function dostavka(){
-var misto=-1;
-alert(document.forms[2].misto[0].checked)
-if (document.forms[2].misto[0].checked==true){
-misto=0;}
-if (document.forms[2].misto[1].checked==true){
-misto=1;}
-if (document.forms[2].misto[2].checked==true){
-misto=0;}
-if (document.forms[2].misto[3].checked==true){
-misto=1;}
-alert(misto)
+alert(tovar);
+city=document.forms[2].Misto.value;
+alert(city);
+var text="К оплате"
+var price=document.body.getElementsByClassName("price")[0];
+price.innerHTML=text
 }
 </script>
-<form name="form1" method="post" action="obrabotchik.php">
+<form name="Name" method="post" action="obrabotchik.php">
 Введите ФИО: <br>
 <input type="text" name="fio" size="40">
 <br>
 </form>
-<form name="form2" method="post" action="obrabotchik.php">
+<form name="Mail" method="post" action="obrabotchik.php">
 Введите свой e-mail: <br>
 <input type="text" name="e-mail" size="35">
 </form>
-<form name="misto" method="post" action="obrabotchik.php">
+<form name="Misto" method="post" action="obrabotchik.php">
 Виберите свой город: <br>
 <select name="select" size="1" id="select" >
-                  <option selected>Киев</option>
-                  <option>Черкаси</option>
-                  <option>Кіровоград</option>
-	<option >Рівне</option>
-                  <option>Одеса</option>
-                  <option>Запоріжжя</option>
-	<option >Ужгород</option>
-                  <option>Івано-Франківськ</option>
-                  <option>Сімферополь</option>
-	<option>Донецьк</option>
-                  <option>Суми</option>
-                  <option>Чернігів</option>
-	<option>Луганськ</option>
-                  <option>Чернівці</option>
-                  <option>Миколаїв</option>
-	<option>Луцьк</option>
-                  <option>Тернопіль</option>
-                  <option>Хмельницьк</option>
-	<option>Дніпропетровськ</option>
-                  <option>Полтава</option>
-                  <option>Харків</option>
-	<option>Херсон</option>
-                  <option>Львів</option>
-                  <option>Вінниця</option>
+                  <option value="0" selected>Киев</option>
+                  <option value="1" selected >Черкаси</option>
+                  <option value="2" selected >Кіровоград</option>
+	<option value="3" selected >Рівне</option>
+                  <option value="4" selected >Одеса</option>
+                  <option value="5" selected >Запоріжжя</option>
+	<option value="6" selected >Ужгород</option>
+                  <option value="7" selected >Івано-Франківськ</option>
+                  <option value="8" selected >Сімферополь</option>
+	<option value="9" selected >Донецьк</option>
+                  <option value="10" selected >Суми</option>
+                  <option value="11" selected >Чернігів</option>
+	<option value="12" selected >Луганськ</option>
+                  <option value="13" selected >Чернівці</option>
+                  <option value="14" selected >Миколаїв</option>
+	<option value="15" selected >Луцьк</option>
+                  <option value="16" selected >Тернопіль</option>
+                  <option value="17" selected >Хмельницьк</option>
+	<option value="18" selected >Дніпропетровськ</option>
+                  <option value="19" selected >Полтава</option>
+                  <option value="20" selected >Харків</option>
+	<option value="21" selected >Херсон</option>
+                  <option value="22" selected >Львів</option>
+                  <option value="23" selected >Вінниця</option>
                 </select>
 </form>
 
-<form name="form4" method="post" action="obrabotchik.php">
+<form name="Adress" method="post" action="obrabotchik.php">
 Адрес (дом, квартира): <br>
 <input type="text" name="adress" size="50">
 <br>
 </form>
 
-<form name="form5" method="post" action="obrabotchik.php">
+<form name="Product" method="post" action="obrabotchik.php">
 <p> Какой продукт вы хотите получить?</p>
 <p>
                 <input name="tovar" type="radio" id="TV" value="Телевізор" checked>
@@ -94,16 +85,18 @@ alert(misto)
                 Комп'ютер </p>
 
 </form> 
-<form name="form6" method="post" action="obrabotchik.php">
+<form name="Quantity" method="post" action="obrabotchik.php">
 Какое количество товару вам необходимо: <br>
 <input type="text" name="kol" size="15">
 <br>
+<div class="price">
+Общая цена заказа </div>
 <br><br><input type="button" value="порахувати" onclick="poschitat()">
 </form>
-
 <p>
                 <input type="submit" name="Submit" id="button2" value="Сделать заказ" width="20">
                 <input type="reset" name="button2" id="button3" value="Отмена ">
               </p>
+
  </body>
 </html>
